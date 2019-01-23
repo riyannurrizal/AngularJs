@@ -1,0 +1,35 @@
+<h4>Add a New Friend</h4>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- Nama -->
+      <div class="form-group row">
+        <label for="inputName" class="col-sm-3 form-control-label">Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" value="{{temanEditParent.nama}}" [(ngModel)]="inputInfo.nama" id="inputName"
+            #inputNama>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group row">
+        <label for="inputEmail" class="col-sm-3 form-control-label"> Email</label>
+        <div class="col-sm-9">
+          <!-- #inputEMail itu id di pasang di teman-add.component.ts -->
+          <input type="text" class="form-control" value="{{temanEditParent.email}}" [(ngModel)]="inputInfo.email" id="inputEmail"
+            #inputEmail>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="form-group row">
+        <label for="inputContact" class="col-sm-3 form-control-label"> Contact</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" value="{{temanEditParent.noTelp}}" [(ngModel)]="inputInfo.noTelp" id="inputContact"
+            #inputContact>
+        </div>
+      </div>
+      <button type="Add" class="btn btn-success" (click)="tambahTeman(inputEmail)">Add Friend</button>
+    </div>
+  </div>
+</div>
