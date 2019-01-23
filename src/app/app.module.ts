@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TemanComponent } from './teman/teman.component';
 import { TemanAddComponent } from './teman/teman-add/teman-add.component';
 import { TemanListComponent } from './teman/teman-list/teman-list.component';
+import { HoverHiglightDirective } from './hover-higlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemanComponent,
     TemanAddComponent,
-    TemanListComponent
+    TemanListComponent,
+    HoverHiglightDirective
   ],
   imports: [
     BrowserModule,

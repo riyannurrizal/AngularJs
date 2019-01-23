@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, Input } from '@angular/core';
 import { Teman } from '../teman.model';
+import { TemansService } from '../temans.service';
 
 @Component({
   selector: 'app-teman-add',
   templateUrl: './teman-add.component.html',
-  styleUrls: ['./teman-add.component.css']
+  styleUrls: ['./teman-add.component.css'],
+  providers: [TemansService]
 })
 export class TemanAddComponent implements OnInit {
   @ViewChild('inputNama') inputNama: ElementRef;
@@ -17,19 +19,20 @@ export class TemanAddComponent implements OnInit {
 
   // inputInfo didapat ng model di teman-add.componen.html dan Teman itu di dapat dari teman.model.ts
   inputInfo: Teman = new Teman();
-  constructor() { }
+  constructor(private temans: TemansService) { }
   ngOnInit() {
   }
 
   // tambahTeman() di dapat dari teman-add.component.html
   tambahTeman(inputEmail: HTMLInputElement) {
-    console.log(this.inputInfo);
-    // ini tanpa @ViewChild
-    console.log(this.inputNama.nativeElement.value);
-    console.log(inputEmail.value);
-    console.log(this.inputContact.nativeElement.value);
+    // console.log(this.inputInfo);
+    // // ini tanpa @ViewChild
+    // console.log(this.inputNama.nativeElement.value);
+    // console.log(inputEmail.value);
+    // console.log(this.inputContact.nativeElement.value);
 
-    this.temanAdded.emit(this.inputInfo);
+    //ini convert nama teman didapat dari temans service
+    this.temanAdded.emit(this.temans.convertNamaTeman(this.inputInfo));
     //instansisasi ulang, supaya tidak bisa edit di form
     this.inputInfo = new Teman();
 
