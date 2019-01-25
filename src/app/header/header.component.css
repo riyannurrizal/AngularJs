@@ -1,0 +1,18 @@
+.navbar {
+  background: #444
+}
+
+/* .navbar.navbar-no-bg {
+  background: #444
+} */
+
+.navbar-dark .navbar-nav {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+/* .navbar-dark .navbar-nav .navbar-link {
+  color: blue;
+  color: blue;
+  border: 0;
+} */

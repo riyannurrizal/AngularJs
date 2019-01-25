@@ -1,0 +1,30 @@
+<br />
+<hr />
+
+<form [formGroup]="anggotaForm" (ngSubmit)="kirim()">
+  <div class="form-group row">
+    <label class="col-sm-3 form-control-label">Your Name</label>
+    <div>
+      <input type="text" [formControlName]="'nama'" class="form-control">
+
+      <span *ngIf="!anggotaForm.get('nama').valid && anggotaForm.get('nama').touched" class='help-block'>
+        <span *ngIf="anggotaForm.get('nama').errors['required']">Wajib Di Isi</span>
+        <span *ngIf="anggotaForm.get('nama').errors['blank']">Tidak Boleh Kosong</span>
+      </span>
+    </div>
+
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-3 form-control-label">ID Number</label>
+    <div>
+      <input type="text" [formControlName]="'nomorKtp'" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-3 form-control-label">Alamat</label>
+    <div>
+      <input type="text" [formControlName]="'alamat'" class="form-control">
+    </div>
+  </div>
+  <button type="add" class="btn btn-danger">Send</button>
+</form>

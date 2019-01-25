@@ -1,0 +1,30 @@
+<br />
+<hr />
+
+<form [formGroup]='contactForm' (ngSubmit)="kirim()">
+  <div class="form-group row">
+    <label class="col-sm-3 form-control-label" for="username">Your Name</label>
+    <div>
+      <input type="text" [formControlName]="'username'" class="form-control">
+
+      <span *ngIf="!contactForm.get('username').valid && contactForm.get('username').touched" class='help-block'>
+        <span *ngIf="contactForm.get('username').errors['required']">Wajib Di Isi</span>
+        <span *ngIf="contactForm.get('username').errors['blank']">Tidak Boleh Kosong</span>
+      </span>
+    </div>
+
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-3 form-control-label" for="usermail">Your Email</label>
+    <div>
+      <input type="text" [formControlName]="'usermail'" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-3 form-control-label" for="usermsg">Your Message</label>
+    <div>
+      <input type="text" [formControlName]="'usermsg'" class="form-control">
+    </div>
+  </div>
+  <button type="add" class="btn btn-danger">Send</button>
+</form>
