@@ -8,10 +8,10 @@
         Nama
       </th>
       <th>
-        Email
+        NoTelp
       </th>
       <th>
-        NoTelp
+        Alamat
       </th>
       <th>
         Action
@@ -25,7 +25,7 @@
       <td>{{ t.nama }}</td>
       <td>{{ t.nomorKtp }}</td>
       <td>{{ t.alamat }}</td>
-      <td><a class="btn btn-primary">Edit</a></td>
+      <td><a class="btn btn-primary" [routerLink]="['/anggota-edit', t.id]">Edit</a></td>
     </tr>
   </tbody>
 </table>

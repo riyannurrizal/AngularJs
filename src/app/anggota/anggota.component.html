@@ -26,5 +26,6 @@
       <input type="text" [formControlName]="'alamat'" class="form-control">
     </div>
   </div>
-  <button type="add" class="btn btn-danger">Send</button>
+  <button type="add" class="btn btn-danger" [disabled]="!anggotaForm.valid">Send</button>
 </form>
+<app-anggota-list [childListen]=parentTalk></app-anggota-list>

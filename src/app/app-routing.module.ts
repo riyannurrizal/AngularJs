@@ -17,6 +17,8 @@ const routes: Routes = [
   { path: 'header', component: HeaderComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'anggota', component: AnggotaComponent },
+  { path: 'anggota-add', component: AnggotaComponent },
+  { path: 'anggota-edit/:id', component: AnggotaComponent },
   { path: 'anggota-list', component: AnggotaListComponent }
 ];
 

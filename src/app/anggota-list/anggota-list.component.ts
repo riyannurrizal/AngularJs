@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { AnggotaService } from '../anggota/anggota.service';
 import { AnggotaModel } from '../anggota/anggota.model';
 
@@ -8,9 +8,11 @@ import { AnggotaModel } from '../anggota/anggota.model';
   styleUrls: ['./anggota-list.component.css'],
   providers: [AnggotaService]
 })
-export class AnggotaListComponent implements OnInit {
+export class AnggotaListComponent implements OnInit, OnChanges {
+  //OnChanges akan bereaksi kepada @Input
 
   constructor(private anggServis: AnggotaService) { }
+  @Input() childListen: string;
   anggotaList: AnggotaModel[];
 
   ngOnInit() {
@@ -19,6 +21,10 @@ export class AnggotaListComponent implements OnInit {
       console.log();
       this.anggotaList = data;
     });
+  }
+
+  ngOnChanges() {
+    this.ngOnInit();
   }
 
 }
