@@ -16,6 +16,7 @@ import { AnggotaComponent } from './anggota/anggota.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AnggotaAddComponent } from './anggota-add/anggota-add.component';
 import { AuthComponent } from './auth/auth.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { AuthComponent } from './auth/auth.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
