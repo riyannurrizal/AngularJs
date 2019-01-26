@@ -13,9 +13,23 @@ import { Subscription } from 'rxjs';
   providers: [AnggotaService]
 })
 export class AnggotaComponent implements OnInit {
+  // //event emitter
+  // anggotaList: AnggotaModel[] = [];
+  // anggotaEdit: AnggotaModel = new AnggotaModel[];
+  // onAnggotaAdd(anggotaInfo: AnggotaModel) {
+  //   this.anggotaList.push(anggotaInfo);
+  // }
+
+  // onAnggotaEdit(anggotaInfo: AnggotaModel){
+  //   this.anggotaEdit = anggotaInfo;
+  //   console.log(this.anggotaEdit);
+  // }
+
+
 
   private idx: string;
   private sub: Subscription;
+
   parentTalk: string;
   anggotaForm: FormGroup;
   constructor(private anggotaService: AnggotaService, private route: ActivatedRoute) {
@@ -44,6 +58,10 @@ export class AnggotaComponent implements OnInit {
     }
   }
 
+  onAnggotaEdit(ide: string) {
+    this.idx = ide;
+    this.ngOnInit();
+  }
 
   kirim() {
     const anggotaModel = new AnggotaModel();
@@ -58,6 +76,9 @@ export class AnggotaComponent implements OnInit {
       this.parentTalk = data.id;
     });
   }
+
+
+
   cekIsEmpty(control: FormControl): { [s: string]: boolean } {
     if (control.value && control.value.trim().length === 0) {
       return { 'blank': true };

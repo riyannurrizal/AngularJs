@@ -1,3 +1,15 @@
-<p>
-  home works!
-</p>
+<form>
+  <div class="form-group row">
+    <label class="col-sm-3 form-control-label">Username</label>
+    <div>
+      <input type="text" class="form-control" id="username" #username>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-3 form-control-label">Password</label>
+    <div>
+      <input type="text" class="form-control" id="password" #password>
+    </div>
+  </div>
+  <button type="Add" class="btn btn-success" (click)="onLogin( username, password)">Login</button>
+</form>

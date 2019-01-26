@@ -25,7 +25,8 @@
       <td>{{ t.nama }}</td>
       <td>{{ t.nomorKtp }}</td>
       <td>{{ t.alamat }}</td>
-      <td><a class="btn btn-primary" [routerLink]="['/anggota-edit', t.id]">Edit</a></td>
+      <td><a class="btn btn-primary" (click)=kirimIdx(t.id)>Edit</a></td>
+      <!-- <td><a class="btn btn-primary" [routerLink]="['/anggota-edit', t.id]">Edit</a></td> -->
     </tr>
   </tbody>
 </table>

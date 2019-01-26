@@ -28,4 +28,8 @@
   </div>
   <button type="add" class="btn btn-danger" [disabled]="!anggotaForm.valid">Send</button>
 </form>
-<app-anggota-list [childListen]=parentTalk></app-anggota-list>
+<!-- <app-anggota-add [anggotaEditParent]=anggotaEdit (anggotaAdd)="onAnggotaAdd($event)"></app-anggota-add>
+<app-anggota-list [anggotaParent]=anggotaList (dariChildKeParent)="onTemanEdit($event)"></app-anggota-list> -->
+<!-- [childListen]=parentTalk -->
+
+<app-anggota-list [childListen]=parentTalk (dariChildKeParent)="onAnggotaEdit($event)"></app-anggota-list>

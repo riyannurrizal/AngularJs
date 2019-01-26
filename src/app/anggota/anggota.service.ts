@@ -17,6 +17,6 @@ export class AnggotaService {
   }
 
   getAnggota(id: string): Observable<AnggotaModel> {
-    return this.http.get<AnggotaModel>(environment.basePath + '/api.anggota/' + id);
+    return this.http.get<AnggotaModel>(environment.basePath + '/api/anggota/' + id);
   }
 }

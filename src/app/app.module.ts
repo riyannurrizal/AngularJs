@@ -14,6 +14,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AnggotaListComponent } from './anggota-list/anggota-list.component';
 import { AnggotaComponent } from './anggota/anggota.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AnggotaAddComponent } from './anggota-add/anggota-add.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     PageNotFoundComponent,
     ContactUsComponent,
     AnggotaListComponent,
-    AnggotaComponent
+    AnggotaComponent,
+    AnggotaAddComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
