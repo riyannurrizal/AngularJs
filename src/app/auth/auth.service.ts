@@ -12,7 +12,7 @@ export class AuthService {
         this.loggedIn = (username === 'riyan' && password === '123');
         if (this.loggedIn) {
             alert('Autentifikasi sukses');
-            this.router.navigate(['/anggota-add']);
+            this.router.navigate(['/anggota']);
         } else {
             alert('Autentifikasi gagal');
         }

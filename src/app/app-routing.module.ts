@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AnggotaComponent } from './anggota/anggota.component';
 import { AnggotaListComponent } from './anggota-list/anggota-list.component';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 // Routes adalah nama kelasnya, routes nama variabel nya
 // tulisan penamaan home,404, teman, header, dan contact-us bebas
@@ -16,10 +17,10 @@ const routes: Routes = [
   { path: 'teman', component: TemanComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'contact-us', component: ContactUsComponent },
-  { path: 'anggota', component: AnggotaComponent },
-  { path: 'anggota-add', component: AnggotaComponent },
-  { path: 'anggota-edit/:id', component: AnggotaComponent },
-  { path: 'anggota-list', component: AnggotaListComponent }
+  { path: 'anggota', component: AnggotaComponent, canActivate: [AuthGuardService] },
+  { path: 'anggota-add', component: AnggotaComponent, canActivate: [AuthGuardService] },
+  { path: 'anggota-edit/:id', component: AnggotaComponent, canActivate: [AuthGuardService] },
+  { path: 'anggota-list', component: AnggotaListComponent, canActivate: [AuthGuardService] }
 ];
 
 //import digunkan untuk mengimport path
